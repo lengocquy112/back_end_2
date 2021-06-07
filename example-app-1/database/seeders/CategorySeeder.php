@@ -2,11 +2,9 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Support\Facades\DB;
-
 use Illuminate\Database\Seeder;
 
-class CategoriesSeeder extends Seeder
+class CategorySeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -15,9 +13,9 @@ class CategoriesSeeder extends Seeder
      */
     public function run()
     {
-        for ($i=0; $i < 10; $i++){
+        for ($i = 0; $i < 100; $i++) {
             DB::table('categories')->insert([
-                'category_name' => "category_".($i+1),
+                'category_name' => Str::random(10),
             ]);
         }
     }
